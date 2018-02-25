@@ -11,7 +11,7 @@ CREATE TABLE GasPrices (
 CREATE TABLE Transactions (
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	time DATETIME,
-	cc VARCHAR(40),
+	cc VARCHAR(50),
 	total MONEY
 );
 
