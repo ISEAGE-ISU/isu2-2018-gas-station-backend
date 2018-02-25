@@ -59,10 +59,28 @@ namespace gas_station_backend.Areas.HelpPage
                 new TextSample("Binary JSON content. See http://bsonspec.org for details."),
                 new MediaTypeHeaderValue("application/bson"));
 
+            MediaTypeHeaderValue j1 = new MediaTypeHeaderValue("application/json");
+            MediaTypeHeaderValue j2 = new MediaTypeHeaderValue("text/json");
+
             config.SetSampleResponse("[3.55, 3.65, 3.75]",
-                            new MediaTypeHeaderValue("application/json"), "getGasPrices", "get");
+                j1, "getGasPrices", "get");
             config.SetSampleResponse("[3.55, 3.65, 3.75]",
-                            new MediaTypeHeaderValue("text/json"), "getGasPrices", "get");
+                j2, "getGasPrices", "get");
+
+            config.SetSampleRequest("{\"grade\": 1,\"price\": 3.80}",
+                j1, "setGasPrice", "post");
+            config.SetSampleRequest("{\"grade\": 1,\"price\": 3.80}",
+                j2, "setGasPrice", "post");
+
+            config.SetSampleRequest("{\"pump\": 1,\"gallons\": 2.1,\"grade\": 1}",
+                j1, "dispenseGas", "post");
+            config.SetSampleRequest("{\"pump\": 1,\"gallons\": 2.1,\"grade\": 1}",
+                j2, "dispenseGas", "post");
+
+            config.SetSampleRequest("{\"cc\": \"cash\",\"items\": [{\"description\": \"rice\",\"price\": 13.37},{\"description\": \"soooooshiiiiiii\",\"price\": 1.01}]}",
+                j1, "doTransaction", "post");
+            config.SetSampleRequest("{\"cc\": \"cash\",\"items\": [{\"description\": \"rice\",\"price\": 13.37},{\"description\": \"soooooshiiiiiii\",\"price\": 1.01}]}",
+                j2, "doTransaction", "post");
 
             //// Uncomment the following to use "[0]=foo&[1]=bar" directly as the sample for all actions that support form URL encoded format
             //// and have IEnumerable<string> as the body parameter or return type.

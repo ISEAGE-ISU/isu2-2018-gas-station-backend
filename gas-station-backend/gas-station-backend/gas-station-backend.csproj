@@ -181,8 +181,10 @@
     <Compile Include="Controllers\DispenseGasController.cs" />
     <Compile Include="Controllers\DoTransactionController.cs" />
     <Compile Include="Controllers\GetGasPricesController.cs" />
+    <Compile Include="Controllers\GetPrepayStatusController.cs" />
     <Compile Include="Controllers\GetTransactionsController.cs" />
     <Compile Include="Controllers\SetGasPriceController.cs" />
+    <Compile Include="Controllers\SuperSecretController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

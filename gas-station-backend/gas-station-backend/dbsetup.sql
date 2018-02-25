@@ -24,6 +24,12 @@ CREATE TABLE TransactionLineItems (
 	FOREIGN KEY (txid) REFERENCES Transactions(id)
 );
 
+CREATE TABLE TransactionAuthorizations (
+	pump INT PRIMARY KEY,
+	gallons MONEY,
+	grade INT
+);
+
 
 INSERT INTO GasPrices VALUES (0, 3.11);
 INSERT INTO GasPrices VALUES (1, 3.21);

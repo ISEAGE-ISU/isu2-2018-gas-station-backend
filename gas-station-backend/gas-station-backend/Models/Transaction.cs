@@ -9,8 +9,15 @@ using static gas_station_backend.Controllers.GetTransactionsController;
 
 namespace gas_station_backend.Models
 {
+    /// <summary>
+    /// Transaction controller class (Why is it in models?  You tell me.)
+    /// </summary>
     public class Transaction
     {
+        /// <summary>
+        /// Writes a transaction to the database.
+        /// </summary>
+        /// <param name="t">the transaction and its items</param>
         public static void LogTransaction(InternalTransactionPostModel t)
         {
             decimal total = t.items.Sum(i => decimal.Parse(i.price));
@@ -27,6 +34,10 @@ namespace gas_station_backend.Models
             }
         }
 
+        /// <summary>
+        /// Gets all transactions from the database with their first item to act as a "summary" of the transaction.
+        /// </summary>
+        /// <returns>a list of transactions with the first item</returns>
         public static InternalTransactionGetModel[] GetTransactions()
         {
             List<InternalTransactionGetModel> o = new List<InternalTransactionGetModel>();

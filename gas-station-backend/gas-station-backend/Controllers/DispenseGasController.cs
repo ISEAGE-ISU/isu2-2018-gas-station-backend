@@ -37,15 +37,15 @@ namespace gas_station_backend.Controllers
             /// <summary>
             /// The pump number to dispense from
             /// </summary>
-            public int pump { get; set; }
+            public string pump { get; set; }
             /// <summary>
             /// The amount of gas to dispense
             /// </summary>
-            public double gallons { get; set; }
+            public string gallons { get; set; }
             /// <summary>
             /// The grade of gas to dispense.  0=regular, 1=plus, 2=premium
             /// </summary>
-            public int grade { get; set; }
+            public string grade { get; set; }
         }
     }
 }

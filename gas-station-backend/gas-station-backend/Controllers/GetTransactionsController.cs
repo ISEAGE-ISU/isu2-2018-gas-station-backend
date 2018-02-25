@@ -8,13 +8,23 @@ using static gas_station_backend.Controllers.DoTransactionController;
 
 namespace gas_station_backend.Controllers
 {
+    /// <summary>
+    /// Gets a log of transactions
+    /// </summary>
     public class GetTransactionsController : ApiController
     {
+        /// <summary>
+        /// Gets a complete log of transaction summaries from the store, pump, and website.
+        /// </summary>
+        /// <returns>A list of transactions</returns>
         public InternalTransactionGetModel[] Get()
         {
             return Transaction.GetTransactions();
         }
 
+        /// <summary>
+        /// A model of a transaction summary.
+        /// </summary>
         public class InternalTransactionGetModel
         {
             /// <summary>
